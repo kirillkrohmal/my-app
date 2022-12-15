@@ -1,10 +1,9 @@
 import "./CostItem.css";
 import CostDate from "./CostDate";
+import Card from "../UI/Card";
 
 
-function CostItem(props) {
-
-
+const CostItem = (props) => {
     return  (
            <div className="cost-item">
             <CostDate date={props.date}>
@@ -12,7 +11,7 @@ function CostItem(props) {
                     
                     <h2>{props.costTitle}</h2>
                     <div className="cost_item__price">$
-                        {props.costAmount}
+                        {props.amount}
                     </div>
 
                 </div>
