@@ -1,22 +1,27 @@
+import './CostFilter.css'
 
 
+const CostFilter = (props) => {
 
-const CostFilter = () => {
+    const yearChangeHandler = (event) => {
+        props.onChangeYear(event.target.value);
+    };
+
     return (
         <div className="cost-filter">
             <div className="cost-filter__control">
-                <select>
+                <label>Выбор по году</label>
+                
+                <select value={props.year} onChange={yearChangeHandler}/>
+                <select onChange={yearChangeHandler}>
                     <option value='2022'>2022</option>
                     <option value='2021'>2021</option>
                     <option value='2020'>2020</option>
                     <option value='2019'>2019</option>
-
-
                 </select>
-
             </div>
         </div>
 
 
-    )
+    );
 }
