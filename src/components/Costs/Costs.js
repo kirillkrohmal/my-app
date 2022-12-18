@@ -5,28 +5,31 @@ import Card from "../UI/Card";
 
 const Costs = (props)  => {
     return (
-        <Card className="costs">
-    
-            <CostItem
-            date={props.cost[0].date}
-            description={props.cost[0].description}
-            amount={props.cost[0].amount}
-            />
-            <CostItem
-                date={props.cost[1].date}
-                description={props.cost[1].description}
-                amount={props.cost[1].amount}
+        <div>
+            <CostFilter>
+            <Card className="costs">
+        
+                <CostItem
+                date={props.cost[0].date}
+                description={props.cost[0].description}
+                amount={props.cost[0].amount}
+                />
+                <CostItem
+                    date={props.cost[1].date}
+                    description={props.cost[1].description}
+                    amount={props.cost[1].amount}
+                    
+                />
+                <CostItem
                 
-            />
-            <CostItem
-            
-                date={props.cost[2].date}
-                description={props.cost[2].description}
-                amount={props.cost[2].amount}
+                    date={props.cost[2].date}
+                    description={props.cost[2].description}
+                    amount={props.cost[2].amount}
 
-            />
-        </Card>
-   
+                />
+            </Card>
+        </CostFilter>
+   </div>
     );
 }
 
