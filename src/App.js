@@ -1,31 +1,36 @@
 import CostItem from "./components/CostItem";
 import Costs from "/components/Costs/Costs";
-import React from "react";
+import React, {useState} from "react";
 import NewCost from "./components/NewCost/NewCost";
 
-const App = () => {
-    const costs = [
-      {
-        id: 'c1',
-        date: new Date(2022, 12, 14),
-        description: 'Холодильник',
-        amount: 299
-      },
 
-      {
-        id: 'c2',
-        date: new Date(2022, 12, 14),
-        description: 'Macbook',
-        amount: 1299
-      },  
-      
-      {
-        id: 'c3',
-        date: new Date(2022, 12, 14),
-        description: 'Леггинсы',
-        amount: 99
-      }
-    ]
+const costs = [
+  {
+    id: 'c1',
+    date: new Date(2022, 12, 14),
+    description: 'Холодильник',
+    amount: 299
+  },
+
+  {
+    id: 'c2',
+    date: new Date(2022, 12, 14),
+    description: 'Macbook',
+    amount: 1299
+  },  
+  
+  {
+    id: 'c3',
+    date: new Date(2022, 12, 14),
+    description: 'Леггинсы',
+    amount: 99
+  },
+];
+
+const App = () => {
+  const [costs, setCosts] = useState(INITIAL_COSTS);
+
+    
 
    /* return React.createElement('div', {}, 
     React.createElement('h1', {}, 'Начнем изучение React'), 
@@ -34,8 +39,10 @@ const App = () => {
 
 
   const addCostHandler = (cost) => {
-    console.log(cost);
-    console.log('App Component');
+    setCosts(prevCosts => {
+      return [cost, ...prevCosts]
+
+    });
 
   } 
 
