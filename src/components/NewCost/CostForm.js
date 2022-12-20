@@ -82,7 +82,9 @@ const CostForm = (props) => {
             <input onChange={dateChangeHandler} value={inputDate} type='date' />
         </div>
         <div className="new-cost__actions">
-            <button type="submit" onClick={}>Добавить расход</button>
+            <button type="submit">Добавить расход</button>
+            <button type="button" onClick={props.onCancel}>Отменить</button>
+
         </div>
     </form>
 }
