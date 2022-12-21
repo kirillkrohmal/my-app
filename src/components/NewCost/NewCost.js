@@ -30,7 +30,8 @@ const NewCost = (props) => {
         {!isFormVisible && <button onClick=
         {inputCostDataHandler}>Добавить новый расход</button>}
         {isFormVisible && <CostForm onSaveHostData=
-        {saveHostDataHandler} onCancel = {cancelCostHandler}/>}
+        {saveHostDataHandler} onCancel = 
+        {cancelCostHandler}/>}
     </div>
 }
 
